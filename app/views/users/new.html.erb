@@ -1,0 +1,15 @@
+<h2> Create New User </h2>
+<%= flash.notice %>
+
+<form action="<%= users_url %>" method="post">
+  Username: <input type="text" name="user[name]" id="user_name">
+  <br>
+  Password: <input type="password" name="user[password]" id="user_password">
+  <br>
+  Password Confirmation:<input type="password" name="user[password_confirmation]" id="user_password_confirmation">
+  <br>
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="submit" value="Create new user">
+</form>

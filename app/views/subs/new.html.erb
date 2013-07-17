@@ -1,0 +1,17 @@
+<h2> Create new Sub </h2>
+<%= flash.notice %>
+
+<form action="<%= subs_url %>" method="post">
+Sub Name: <input type="text" name="sub[sub_name]">
+</br>
+URL
+<% 5.times do |n| %>
+<ul>
+  <li><input type="text" name="sub[links_attributes][<%= n %>][url]"></li>
+</ul>
+<% end %>
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<input type="submit" value="Create new sub">
+
+
+  </form>
